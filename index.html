@@ -46,7 +46,6 @@
             scrollbar-width: thin;
             scrollbar-color: #ffffff rgba(0, 0, 0, 0.4);
             -webkit-overflow-scrolling: touch;
-            position: relative;
         }
         
         .custom-scroll::-webkit-scrollbar {
@@ -61,19 +60,6 @@
             background-color: #ffffff !important;
             border-radius: 10px !important;
             border: 3px solid #3d2011 !important;
-        }
-
-        /* Sombra inferior indicadora de scroll */
-        .custom-scroll::after {
-            content: '';
-            position: sticky;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background: linear-gradient(to top, rgba(217, 184, 133, 0.9), transparent);
-            pointer-events: none;
-            display: block;
         }
         
         .hebilla-vaquera {
@@ -311,6 +297,11 @@
                     <h4 class="text-xs sm:text-sm font-western-bold text-[#3d2011] uppercase tracking-widest">📌 Nota de los Novios</h4>
                     <p class="text-xs sm:text-sm text-gray-900 font-bold leading-normal">• Les encargamos bastante llegar temprano para no perderse de nada.</p>
                     <p class="text-xs sm:text-sm text-gray-900 font-bold leading-normal">• Vengan listos para gastarse la bota en la pista y disfrutar al máximo.</p>
+                </div>
+
+                <!-- Indicador visual de más contenido -->
+                <div class="text-center py-2 animate-bounce">
+                    <span class="text-xs font-western-bold text-[#3d2011] tracking-widest">↓ DESLIZA PARA VER MÁS ↓</span>
                 </div>
 
                 <!-- BARRA DE NAVEGACIÓN INFERIOR -->
