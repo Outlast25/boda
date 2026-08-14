@@ -39,9 +39,11 @@ function cambiarApartado(idApartado) {
     const seleccionado = document.getElementById(`apartado-${idApartado}`);
     if (seleccionado) {
         seleccionado.classList.add('active');
-        // Asegura que al cambiar de pestaña la vista suba al inicio de la tarjeta
         seleccionado.scrollTop = 0;
     }
+
+    // Asegura que la vista global de la página no se quede abajo en móviles
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     const botones = ['inicio', 'fotos', 'lugares'];
     botones.forEach(btn => {
