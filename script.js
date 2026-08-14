@@ -39,6 +39,8 @@ function cambiarApartado(idApartado) {
     const seleccionado = document.getElementById(`apartado-${idApartado}`);
     if (seleccionado) {
         seleccionado.classList.add('active');
+        // Asegura que al cambiar de pestaña la vista suba al inicio de la tarjeta
+        seleccionado.scrollTop = 0;
     }
 
     const botones = ['inicio', 'fotos', 'lugares'];
@@ -46,9 +48,9 @@ function cambiarApartado(idApartado) {
         const btnEl = document.getElementById(`btn-${btn}`);
         if (btnEl) {
             if (btn === idApartado) {
-                btnEl.className = "flex-1 tab-placa text-[#d9b885] py-2.5 rounded-lg text-xs font-western-bold tracking-wider uppercase cursor-pointer text-center";
+                btnEl.className = "flex-1 tab-placa text-[#d9b885] py-3 rounded-lg text-xs font-western-bold tracking-wider uppercase cursor-pointer text-center";
             } else {
-                btnEl.className = "flex-1 tab-placa inactive text-[#d9b885]/80 py-2.5 rounded-lg text-xs font-western-bold tracking-wider uppercase cursor-pointer text-center";
+                btnEl.className = "flex-1 tab-placa inactive text-[#d9b885]/80 py-3 rounded-lg text-xs font-western-bold tracking-wider uppercase cursor-pointer text-center";
             }
         }
     });
@@ -115,16 +117,15 @@ function updateCarousel(index) {
         captionEl.innerText = captions[currentIndex] || captions[0];
     }
 
-    // Rotación orgánica dinámica en cada cambio de foto
     if (polaroidFrame) {
-        polaroidFrame.className = `bg-[#fcfaf7] p-3.5 pb-5 rounded-md shadow-[0_15px_30px_rgba(0,0,0,0.5)] border border-[#d4c5b2] transition-transform duration-500 relative overflow-hidden ${rotacionesPolaroid[currentIndex % rotacionesPolaroid.length]}`;
+        polaroidFrame.className = `bg-[#fcfaf7] p-4 pb-6 rounded-md shadow-[0_15px_30px_rgba(0,0,0,0.5)] border border-[#d4c5b2] transition-transform duration-500 relative overflow-hidden ${rotacionesPolaroid[currentIndex % rotacionesPolaroid.length]}`;
     }
 
     dots.forEach((dot, idx) => {
         if (idx === currentIndex) {
-            dot.className = "dot w-2.5 h-2.5 rounded-full bg-[#3d2011] transition-all cursor-pointer scale-125";
+            dot.className = "dot w-3 h-3 rounded-full bg-[#3d2011] transition-all cursor-pointer scale-125";
         } else {
-            dot.className = "dot w-2.5 h-2.5 rounded-full bg-[#3d2011]/30 transition-all cursor-pointer";
+            dot.className = "dot w-3 h-3 rounded-full bg-[#3d2011]/30 transition-all cursor-pointer";
         }
     });
 }
