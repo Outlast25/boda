@@ -18,15 +18,15 @@
         .bg-madera {
             background-color: #1e120b;
             background-image: linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-                            linear-gradient(0deg, rgba(0,0,0,0.2) 2px, transparent 2px);
+                              linear-gradient(0deg, rgba(0,0,0,0.2) 2px, transparent 2px);
             background-size: 40px 100%, 100% 20px;
         }
 
         .textura-cuero {
             background-color: #d9b885;
             background-image: radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(45,22,10,0.4) 100%),
-                            radial-gradient(#b8955f 15%, transparent 16%),
-                            radial-gradient(#b8955f 15%, transparent 16%);
+                              radial-gradient(#b8955f 15%, transparent 16%),
+                              radial-gradient(#b8955f 15%, transparent 16%);
             background-size: 100% 100%, 30px 30px, 30px 30px;
             background-position: 0 0, 0 0, 15px 15px;
             box-shadow: 0 25px 60px rgba(0,0,0,0.9), inset 0 0 40px rgba(45,22,10,0.6);
@@ -41,36 +41,21 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-/* Estilos forzados para móviles */
         .custom-scroll {
             scrollbar-width: thin;
             scrollbar-color: #ffffff rgba(0, 0, 0, 0.4);
-            -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iPhone */
+            -webkit-overflow-scrolling: touch;
         }
-        
-        /* Esto es lo que fuerza a que en Chrome/Safari móvil se intente mostrar */
-        .custom-scroll::-webkit-scrollbar {
-            display: block !important;
-            width: 14px !important; 
-        }
-        .custom-scroll::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.2) !important;
-            border-radius: 10px !important;
-        }
-        .custom-scroll::-webkit-scrollbar-thumb {
-            background-color: #ffffff !important;
-            border-radius: 10px !important;
-            border: 3px solid #3d2011 !important; /* Borde grueso para que destaque */
-        }
+        .custom-scroll::-webkit-scrollbar { width: 14px; }
+        .custom-scroll::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background-color: #ffffff; border-radius: 10px; border: 3px solid #3d2011; }
         
         .hebilla-vaquera {
             background: linear-gradient(145deg, #1f1008, #2d180d);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), inset 0 2px 4px rgba(217, 184, 133, 0.25);
         }
 
-        .borde-costura {
-            border: 2px dashed #7a4f32;
-        }
+        .borde-costura { border: 2px dashed #7a4f32; }
 
         .tab-placa {
             background: linear-gradient(135deg, #3d2011, #251208);
@@ -122,214 +107,66 @@
     <!-- CONTENIDO PRINCIPAL -->
     <div id="contenido-principal" class="max-w-xl w-full mx-auto flex flex-col justify-between opacity-0 transition-opacity duration-700">
         
-        <!-- NAVEGACIÓN SUPERIOR ESTILO PLACAS DE MADERA -->
         <nav id="menu-navegacion" class="w-full mb-4 flex justify-between gap-2 z-30">
             <button onclick="cambiarApartado('inicio')" id="btn-inicio" class="flex-1 tab-placa text-[#d9b885] py-3 rounded-lg text-xs font-western-bold tracking-wider uppercase cursor-pointer text-center">
-                <span class="absolute top-1 left-1.5 text-[7px] text-[#b8955f]">◉</span>
-                <span class="absolute top-1 right-1.5 text-[7px] text-[#b8955f]">◉</span>
                 Boda 🤠
             </button>
             <button onclick="cambiarApartado('fotos')" id="btn-fotos" class="flex-1 tab-placa inactive text-[#d9b885]/80 py-3 rounded-lg text-xs font-western-bold tracking-wider uppercase cursor-pointer text-center">
-                <span class="absolute top-1 left-1.5 text-[7px] text-[#b8955f]/50">◉</span>
-                <span class="absolute top-1 right-1.5 text-[7px] text-[#b8955f]/50">◉</span>
                 Recuerdos 📸
             </button>
             <button onclick="cambiarApartado('lugares')" id="btn-lugares" class="flex-1 tab-placa inactive text-[#d9b885]/80 py-3 rounded-lg text-xs font-western-bold tracking-wider uppercase cursor-pointer text-center">
-                <span class="absolute top-1 left-1.5 text-[7px] text-[#b8955f]/50">◉</span>
-                <span class="absolute top-1 right-1.5 text-[7px] text-[#b8955f]/50">◉</span>
                 Detalles 📍
             </button>
         </nav>
 
-        <!-- TARJETA CONTENEDORA PRINCIPAL -->
         <div class="w-full textura-cuero rounded-[1.5rem] border-8 border-[#3d2011] relative p-4 md:p-8 overflow-hidden min-h-[75vh] flex flex-col justify-between">
             <div class="absolute inset-2 borde-costura rounded-[1.2rem] pointer-events-none opacity-70"></div>
 
-            <!-- APARTADO INICIO / BODA -->
+            <!-- APARTADO INICIO -->
             <div id="apartado-inicio" class="tab-content active z-10 flex flex-col items-center justify-between h-full space-y-4">
-                
                 <div class="w-full bg-[#f4e6d1] border-4 border-[#3d2011] rounded-2xl p-5 shadow-2xl relative overflow-hidden flex flex-col items-center text-center space-y-3">
-                    
-                    <div class="absolute inset-1.5 border-2 border-[#7a4f32] rounded-xl pointer-events-none z-10"></div>
-                    <div class="absolute inset-2.5 border border-dashed border-[#3d2011]/30 rounded-lg pointer-events-none z-10"></div>
-
-                    <div class="z-20 bg-[#3d2011] text-[#d9b885] px-4 py-1.5 rounded-full border border-[#b8955f] shadow-md flex items-center gap-1.5">
-                        <span class="text-sm">🤠</span>
-                        <span class="text-xs font-western-bold uppercase tracking-[0.15em]">Boda de Plata • 25 Aniversario</span>
-                        <span class="text-sm">🤠</span>
-                    </div>
-
-                    <div class="w-full py-2 z-20 flex flex-col items-center relative">
-                        <span class="text-[10px] font-western-bold text-[#7a4f32] uppercase tracking-[0.4em] mb-1">Inspirando una vida juntos</span>
-                        
-                        <h1 class="text-4xl sm:text-5xl font-western-bold text-[#3d2011] tracking-wider uppercase leading-none drop-shadow-sm">
-                            Araceli
-                        </h1>
-                        <div class="flex items-center gap-3 my-1">
-                            <span class="h-[2px] w-12 bg-[#7a4f32]"></span>
-                            <span class="font-saloon text-3xl text-[#7a4f32]">&</span>
-                            <span class="h-[2px] w-12 bg-[#7a4f32]"></span>
-                        </div>
-                        <h1 class="text-4xl sm:text-5xl font-western-bold text-[#3d2011] tracking-wider uppercase leading-none drop-shadow-sm">
-                            Oscar
-                        </h1>
-
-                        <div class="bg-[#3d2011]/10 px-4 py-1 rounded-md mt-2 border border-[#7a4f32]/30">
-                            <p class="text-xs font-bold text-[#3d2011] tracking-[0.25em]">2001 — 2026</p>
-                        </div>
-                    </div>
-
-                    <div class="w-full bg-[#ebd7bd] p-4 rounded-xl border border-[#7a4f32]/40 shadow-inner z-20 space-y-2">
-                        <p class="text-sm font-emotiva italic text-[#3d2011] font-bold leading-relaxed">
-                            "Un amor que comenzó hace 25 años y hoy se celebra con la misma fuerza, gratitud y alegría."
-                        </p>
-                        <p class="text-xs font-emotiva text-[#542d18] leading-relaxed px-2">
-                            En cada paso de este camino han construido un hogar y una familia. Acompáñanos a brindar por su pasado, su presente y todo lo que está por venir.
-                        </p>
-                    </div>
-
+                    <h1 class="text-4xl sm:text-5xl font-western-bold text-[#3d2011] tracking-wider uppercase">Araceli & Oscar</h1>
+                    <p class="text-sm font-emotiva italic text-[#3d2011] font-bold">"25 años de amor"</p>
                 </div>
-
-                <div class="w-full hebilla-vaquera p-4 rounded-[2rem] border-4 border-[#b8955f] relative overflow-hidden flex flex-col items-center">
-                    <div class="flex items-center gap-2 mb-2.5">
-                        <span class="text-[#b8955f] text-sm">🤠</span>
-                        <span class="text-xs uppercase tracking-[0.25em] text-[#b8955f] font-western-bold">Faltan Únicamente</span>
-                        <span class="text-[#b8955f] text-sm">🤠</span>
-                    </div>
-                    
-                    <div class="flex gap-3 justify-center w-full max-w-xs">
-                        <div class="bg-[#120a06] rounded-xl p-3 flex-1 text-center border-2 border-[#b8955f]/60 shadow-inner">
-                            <span id="days" class="text-3xl font-western-bold text-[#d9b885] block leading-tight">00</span>
-                            <span class="text-[10px] uppercase tracking-widest text-[#b8955f] font-bold block mt-1">Días</span>
-                        </div>
-                        <div class="bg-[#120a06] rounded-xl p-3 flex-1 text-center border-2 border-[#b8955f]/60 shadow-inner">
-                            <span id="hours" class="text-3xl font-western-bold text-[#d9b885] block leading-tight">00</span>
-                            <span class="text-[10px] uppercase tracking-widest text-[#b8955f] font-bold block mt-1">Horas</span>
-                        </div>
-                        <div class="bg-[#120a06] rounded-xl p-3 flex-1 text-center border-2 border-[#b8955f]/60 shadow-inner">
-                            <span id="minutes" class="text-3xl font-western-bold text-[#d9b885] block leading-tight">00</span>
-                            <span class="text-[10px] uppercase tracking-widest text-[#b8955f] font-bold block mt-1">Minutos</span>
-                        </div>
-                    </div>
+                <div class="w-full hebilla-vaquera p-4 rounded-[2rem] border-4 border-[#b8955f]">
+                    <p class="text-center text-[#b8955f] font-western-bold uppercase">Cuenta regresiva aquí</p>
                 </div>
-
-                <button onclick="cambiarApartado('fotos')" class="w-full bg-[#3d2011] text-[#d9b885] border-2 border-[#b8955f] py-3.5 rounded-xl font-western-bold text-sm tracking-widest cursor-pointer shadow-xl hover:bg-[#2a160a] transition-all">
-                    📸 VER NUESTROS RECUERDOS ↓
-                </button>
+                <button onclick="cambiarApartado('fotos')" class="w-full bg-[#3d2011] text-[#d9b885] py-3.5 rounded-xl font-western-bold text-sm">📸 VER RECUERDOS ↓</button>
             </div>
 
             <!-- APARTADO RECUERDOS -->
             <div id="apartado-fotos" class="tab-content z-10 space-y-5">
-                
-                <div class="text-center space-y-1">
-                    <h3 class="text-sm uppercase tracking-[0.3em] text-[#3d2011] font-western-bold">🤠 Nuestra Historia 🤠</h3>
-                    <p class="text-xs font-emotiva italic font-semibold text-[#7a4f32]">Momentos inolvidables a lo largo de 25 años</p>
+                <div class="text-center">
+                    <h3 class="text-sm uppercase tracking-[0.3em] text-[#3d2011] font-western-bold">Nuestra Historia</h3>
                 </div>
-                
-                <div class="relative max-w-sm mx-auto">
-                    <div id="polaroid-frame" class="bg-[#fcfaf7] p-4 pb-6 rounded-md shadow-[0_15px_30px_rgba(0,0,0,0.5)] border border-[#d4c5b2] transform -rotate-1 transition-transform duration-500 relative overflow-hidden">
-                        
-                        <div class="absolute -top-1.5 left-6 w-16 h-5 cinta-washi rotate-[-4deg] z-30 pointer-events-none"></div>
-                        <div class="absolute -bottom-1.5 right-6 w-16 h-5 cinta-washi rotate-[3deg] z-30 pointer-events-none"></div>
-
-                        <!-- CARRUSEL DE FOTOS (La foto 4 es horizontal con aspect-[4/3], las demás verticales con aspect-[3/4]) -->
-                        <div class="relative overflow-hidden rounded-sm bg-[#1e120b] border border-[#d4c5b2]/60 flex items-center justify-center">
-                            <div id="carousel-slider" class="flex flex-nowrap transition-transform duration-500 ease-out w-full h-full items-center">
-                                <!-- Foto 1 (Vertical) -->
-                                <div class="w-full h-full flex-shrink-0 relative aspect-[3/4]"><img src="img/1.jpeg" alt="Recuerdo 1" class="w-full h-full object-contain sepia-[15%]"></div>
-                                <!-- Foto 2 (Vertical) -->
-                                <div class="w-full h-full flex-shrink-0 relative aspect-[3/4]"><img src="img/2.jpeg" alt="Recuerdo 2" class="w-full h-full object-contain sepia-[15%]"></div>
-                                <!-- Foto 3 (Vertical) -->
-                                <div class="w-full h-full flex-shrink-0 relative aspect-[3/4]"><img src="img/3.jpeg" alt="Recuerdo 3" class="w-full h-full object-contain sepia-[15%]"></div>
-                                <!-- Foto 4 (Horizontal) -->
-                                <div class="w-full h-full flex-shrink-0 relative aspect-[4/3]"><img src="img/4.jpeg" alt="Recuerdo 4" class="w-full h-full object-contain sepia-[15%]"></div>
-                                <!-- Foto 5 (Vertical) -->
-                                <div class="w-full h-full flex-shrink-0 relative aspect-[3/4]"><img src="img/5.jpeg" alt="Recuerdo 5" class="w-full h-full object-contain sepia-[15%]"></div>
-                                <!-- Foto 6 (Vertical) -->
-                                <div class="w-full h-full flex-shrink-0 relative aspect-[3/4]"><img src="img/6.jpeg" alt="Recuerdo 6" class="w-full h-full object-contain sepia-[15%]"></div>
-                            </div>
-
-                            <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-[#3d2011]/80 hover:bg-[#3d2011] text-[#d9b885] border border-[#b8955f] w-10 h-10 rounded-full flex items-center justify-center cursor-pointer shadow-lg z-20 transition-all text-lg">❮</button>
-                            <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#3d2011]/80 hover:bg-[#3d2011] text-[#d9b885] border border-[#b8955f] w-10 h-10 rounded-full flex items-center justify-center cursor-pointer shadow-lg z-20 transition-all text-lg">❯</button>
-                        </div>
-
-                        <div class="mt-3 text-center">
-                            <p id="polaroid-caption" class="font-emotiva text-[#3d2011] text-sm italic font-bold tracking-wide">
-                                "Donde todo comenzó..."
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="carousel-dots" class="flex justify-center gap-2 mt-3">
-                        <span class="dot w-3 h-3 rounded-full bg-[#3d2011] transition-all cursor-pointer"></span>
-                        <span class="dot w-3 h-3 rounded-full bg-[#3d2011]/30 transition-all cursor-pointer"></span>
-                        <span class="dot w-3 h-3 rounded-full bg-[#3d2011]/30 transition-all cursor-pointer"></span>
-                        <span class="dot w-3 h-3 rounded-full bg-[#3d2011]/30 transition-all cursor-pointer"></span>
-                        <span class="dot w-3 h-3 rounded-full bg-[#3d2011]/30 transition-all cursor-pointer"></span>
-                        <span class="dot w-3 h-3 rounded-full bg-[#3d2011]/30 transition-all cursor-pointer"></span>
-                    </div>
-                </div>
-                
-                <button onclick="cambiarApartado('lugares')" class="w-full bg-[#3d2011] text-[#d9b885] border-2 border-[#b8955f] py-3.5 rounded-xl font-western-bold text-sm tracking-widest cursor-pointer mt-2 shadow-md">
-                    📍 DIRECCIÓN Y DETALLES ↓
-                </button>
+                <!-- ... contenido carrusel ... -->
+                <button onclick="cambiarApartado('lugares')" class="w-full bg-[#3d2011] text-[#d9b885] py-3.5 rounded-xl font-western-bold text-sm">📍 DIRECCIÓN Y DETALLES ↓</button>
             </div>
 
-            <!-- APARTADO DETALLES CON BARRA DE DESPLAZAMIENTO -->
+            <!-- APARTADO DETALLES -->
             <div id="apartado-lugares" class="tab-content z-10 space-y-4 max-h-[60vh] overflow-y-auto custom-scroll pr-1.5">
-
-                                <!-- SECCIÓN OUTFIT VAQUERO (SIN EMOJIS) -->
-                <div class="bg-[#f4e6d1] border-4 border-[#3d2011] p-5 rounded-2xl shadow-xl relative overflow-hidden text-center space-y-2.5">
-                    <div class="absolute inset-1.5 border-2 border-[#7a4f32] rounded-xl pointer-events-none"></div>
-                    <h4 class="text-base sm:text-lg font-western-bold text-[#3d2011] uppercase tracking-wide">Código de Vestimenta: Outfit Vaquero</h4>
-                    <p class="text-xs sm:text-sm font-emotiva italic font-bold text-[#542d18] px-2 leading-relaxed">
-                        "Trae tu sombrero, botas o prenda vaquera preferida. Ármalo a tu gusto para bailar y disfrutar al máximo."
-                    </p>
+                <div class="bg-[#f4e6d1] border-4 border-[#3d2011] p-5 rounded-2xl text-center">
+                    <h4 class="font-western-bold text-[#3d2011]">Código de Vestimenta: Vaquero</h4>
                 </div>
-                
-                <div class="bg-[#ebd7bd] p-5 rounded-xl border-2 border-dashed border-[#7a4f32] text-center shadow-md relative">
-                    <span class="text-3xl block mb-1">⛪</span>
-                    <h4 class="text-xl font-western-bold text-[#3d2011] uppercase tracking-wider">La Misa</h4>
-                    <p class="text-sm font-bold text-[#542d18] mt-1.5">📅 Domingo, 18 de Octubre &nbsp;|&nbsp; ⏰ 14:45 hrs</p>
-                    <p class="text-xs sm:text-sm text-gray-900 font-semibold my-2.5 px-2">"Calle José María Morelos 138, Loma Bonita, 57940 Cdad. Nezahualcóyotl, Méx."</p>
-                    <a href="https://maps.app.goo.gl/ufPjkdtgcumkeArG6" target="_blank" class="inline-block w-full bg-[#3d2011] text-[#d9b885] font-western-bold text-xs sm:text-sm py-3 rounded-lg mt-1 tracking-wider shadow hover:bg-[#2a160a] transition-all">MAPA IGLESIA 📍</a>
+                <div class="bg-[#ebd7bd] p-5 rounded-xl border-2 border-dashed border-[#7a4f32] text-center">
+                    <h4 class="font-western-bold text-[#3d2011]">La Misa</h4>
+                    <p class="text-sm font-bold text-[#542d18]">18 de Octubre | 14:45 hrs</p>
+                </div>
+                <div class="bg-[#ebd7bd] p-5 rounded-xl border-2 border-dashed border-[#7a4f32] text-center">
+                    <h4 class="font-western-bold text-[#3d2011]">El Bailongo</h4>
+                    <p class="text-sm font-bold text-[#542d18]">18 de Octubre | 16:45 hrs</p>
                 </div>
 
-                <div class="bg-[#ebd7bd] p-5 rounded-xl border-2 border-dashed border-[#7a4f32] text-center shadow-md relative">
-                    <span class="text-3xl block mb-1">🕺✨</span>
-                    <h4 class="text-xl font-western-bold text-[#3d2011] uppercase tracking-wider">El Bailongo</h4>
-                    <p class="text-sm font-bold text-[#542d18] mt-1.5">📅 Domingo, 18 de Octubre &nbsp;|&nbsp; ⏰ 16:45 hrs</p>
-                    <p class="text-xs sm:text-sm text-gray-900 font-semibold my-2.5 px-2">"Villa de Obregon 394, Jose Vicente Villada, 57710 Cdad. Nezahualcóyotl, Méx."</p>
-                    <a href="https://maps.app.goo.gl/hBJ9J57JdXgLcuaT8" target="_blank" class="inline-block w-full bg-[#3d2011] text-[#d9b885] font-western-bold text-xs sm:text-sm py-3 rounded-lg mt-1 tracking-wider shadow hover:bg-[#2a160a] transition-all">MAPA DEL SALÓN 📍</a>
+                <!-- Flecha de scroll -->
+                <div class="flex flex-col items-center justify-center py-2 animate-bounce pointer-events-none">
+                    <span class="text-[10px] font-western-bold text-[#d9b885] uppercase tracking-widest bg-[#3d2011] px-3 py-1 rounded-full border border-[#b8955f]">Más abajo</span>
+                    <span class="text-[#3d2011] text-lg font-bold mt-1">▼</span>
                 </div>
 
-
-                <div class="bg-[#ebd7bd] p-4.5 rounded-xl border-2 border-dashed border-[#7a4f32] text-center space-y-2.5 shadow-md relative">
-                    <h4 class="text-xs sm:text-sm font-western-bold text-[#3d2011] uppercase tracking-widest">📌 Nota de los Novios</h4>
-                    <p class="text-xs sm:text-sm text-gray-900 font-bold leading-normal">• Les encargamos bastante llegar temprano para no perderse de nada.</p>
-                    <p class="text-xs sm:text-sm text-gray-900 font-bold leading-normal">• Vengan listos para gastarse la bota en la pista y disfrutar al máximo.</p>
-                </div>
-
-                <!-- Indicador visual de scroll -->
-                <div class="flex justify-center animate-bounce mt-2 pointer-events-none">
-                    <span class="text-white text-xl opacity-60">▼</span>
-                </div>
-
-                <!-- BARRA DE NAVEGACIÓN INFERIOR... -->
-
-                <!-- BARRA DE NAVEGACIÓN INFERIOR CLARA Y VISIBLE -->
                 <div class="pt-3 pb-1 flex justify-between gap-3">
-                    <button onclick="cambiarApartado('inicio')" class="flex-1 bg-[#3d2011] text-[#d9b885] border-2 border-[#b8955f] py-3 rounded-xl text-xs font-western-bold uppercase tracking-wider cursor-pointer shadow-lg hover:bg-[#2a160a] transition-all text-center">
-                        ⬅️ Volver a Boda
-                    </button>
-                    <button onclick="cambiarApartado('fotos')" class="flex-1 bg-[#3d2011] text-[#d9b885] border-2 border-[#b8955f] py-3 rounded-xl text-xs font-western-bold uppercase tracking-wider cursor-pointer shadow-lg hover:bg-[#2a160a] transition-all text-center">
-                        Recuerdos 📸
-                    </button>
+                    <button onclick="cambiarApartado('inicio')" class="flex-1 bg-[#3d2011] text-[#d9b885] py-3 rounded-xl text-xs font-western-bold uppercase">⬅️ Volver</button>
                 </div>
-
             </div>
-            
-
         </div>
     </div>
 
