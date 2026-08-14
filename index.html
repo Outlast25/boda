@@ -41,29 +41,27 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-/* Barra de desplazamiento blanca, ancha y 100% visible */
+/* Estilos forzados para móviles */
         .custom-scroll {
             scrollbar-width: thin;
+            scrollbar-color: #ffffff rgba(0, 0, 0, 0.4);
+            -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iPhone */
         }
+        
+        /* Esto es lo que fuerza a que en Chrome/Safari móvil se intente mostrar */
         .custom-scroll::-webkit-scrollbar {
-            width: 12px; /* Un poco más ancha para que sea muy fácil de tocar */
+            display: block !important;
+            width: 14px !important; 
         }
         .custom-scroll::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente para que la barra blanca resalte */
-            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2) !important;
+            border-radius: 10px !important;
         }
         .custom-scroll::-webkit-scrollbar-thumb {
-            background-color: #ffffff; /* BLANCO PURO para que sea el punto más llamativo */
-            border-radius: 10px;
-            border: 2px solid #3d2011; /* Borde fino para darle elegancia y definición */
-            box-shadow: 0 0 5px rgba(255,255,255,0.8); /* Un ligero resplandor blanco */
+            background-color: #ffffff !important;
+            border-radius: 10px !important;
+            border: 3px solid #3d2011 !important; /* Borde grueso para que destaque */
         }
-        /* Efecto al pasar el dedo o mouse */
-        .custom-scroll::-webkit-scrollbar-thumb:hover {
-            background-color: #f0f0f0;
-            border: 2px solid #d9b885;
-        }
-
         
         .hebilla-vaquera {
             background: linear-gradient(145deg, #1f1008, #2d180d);
@@ -311,6 +309,13 @@
                     <p class="text-xs sm:text-sm text-gray-900 font-bold leading-normal">• Vengan listos para gastarse la bota en la pista y disfrutar al máximo.</p>
                 </div>
 
+                <!-- Indicador visual de scroll -->
+                <div class="flex justify-center animate-bounce mt-2 pointer-events-none">
+                    <span class="text-white text-xl opacity-60">▼</span>
+                </div>
+
+                <!-- BARRA DE NAVEGACIÓN INFERIOR... -->
+
                 <!-- BARRA DE NAVEGACIÓN INFERIOR CLARA Y VISIBLE -->
                 <div class="pt-3 pb-1 flex justify-between gap-3">
                     <button onclick="cambiarApartado('inicio')" class="flex-1 bg-[#3d2011] text-[#d9b885] border-2 border-[#b8955f] py-3 rounded-xl text-xs font-western-bold uppercase tracking-wider cursor-pointer shadow-lg hover:bg-[#2a160a] transition-all text-center">
@@ -322,6 +327,7 @@
                 </div>
 
             </div>
+            
 
         </div>
     </div>
